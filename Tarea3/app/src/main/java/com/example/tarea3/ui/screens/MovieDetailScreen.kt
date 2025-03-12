@@ -1,5 +1,7 @@
 package com.example.tarea3.ui.screens
 
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -14,7 +16,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.example.tarea3.api.RetrofitClient.IMAGE_BASE_URL
 import com.example.tarea3.viewmodel.MovieViewModel
+import androidx.compose.material3.ExperimentalMaterial3Api
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MovieDetailScreen(
     movieId: Int,
