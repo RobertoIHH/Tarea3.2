@@ -77,7 +77,9 @@ fun HelloScreen() {
                     val apiService = RetrofitClient.getClient().create(ApiService::class.java)
                     val call = apiService.getHello()
 
+                    // Manejo de la respuesta de la API
                     call.enqueue(object : Callback<HelloResponse> {
+                        // Maneja respuesta exitosa del servidor
                         override fun onResponse(call: Call<HelloResponse>, response: Response<HelloResponse>) {
                             isLoading = false
 
@@ -90,6 +92,7 @@ fun HelloScreen() {
                             }
                         }
 
+                        // Maneja fallos de conexión
                         override fun onFailure(call: Call<HelloResponse>, t: Throwable) {
                             isLoading = false
                             isError = true
